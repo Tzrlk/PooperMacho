@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-mappings xmlns="http://java.sun.com/xml/ns/persistence/orm"
+                 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                 xsi:schemaLocation="http://java.sun.com/xml/ns/persistence/orm http://java.sun.com/xml/ns/persistence/orm_2_0.xsd"
+                 version="2.0">
+
+    <entity name="comparison" class="nz.co.aetheric.poopermacho.comparison.Comparison" access="FIELD">
+
+        <inheritance strategy="TABLE_PER_CLASS"/>
+
+        <attributes>
+
+            <id name="id">
+                <generated-value generator="seq" strategy="AUTO"/>
+                <sequence-generator name="seq"/>
+            </id>
+
+            <basic name="dateCreated">
+                <temporal>TIMESTAMP</temporal>
+            </basic>
+
+            <basic name="lastUpdated">
+                <temporal>TIMESTAMP</temporal>
+            </basic>
+
+        </attributes>
+
+    </entity>
+
+</entity-mappings>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>nz.co.aetheric</groupId>
+        <artifactId>poopermacho-parent</artifactId>
+        <relativePath>./parent/pom.xml</relativePath>
+        <version>1.0.1</version>
+    </parent>
+
+    <artifactId>poopermacho</artifactId>
+    <version>1.0.1</version>
+    <packaging>pom</packaging>
+
+    <name>PooperMacho</name>
+    <description>The reactor build for the PooperMacho project</description>
+
+    <modules>
+        <module>parent</module>
+        <module>base</module>
+        <module>persist</module>
+        <module>web</module>
+    </modules>
+    
+</project>

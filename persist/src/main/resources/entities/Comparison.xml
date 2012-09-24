@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-mappings xmlns="http://java.sun.com/xml/ns/persistence/orm"
+                 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                 xsi:schemaLocation="http://java.sun.com/xml/ns/persistence/orm http://java.sun.com/xml/ns/persistence/orm_2_0.xsd"
+                 version="2.0">
+
+    <entity name="comparison" class="nz.co.aetheric.poopermacho.comparison.Comparison" access="FIELD">
+
+        <attributes>
+
+            <id name="id">
+                <generated-value generator="seq" strategy="AUTO"/>
+                <sequence-generator name="seq"/>
+            </id>
+
+            <basic name="comparisonType">
+                <enumerated>STRING</enumerated>
+            </basic>
+
+            <basic name="dateCreated">
+                <temporal>TIMESTAMP</temporal>
+            </basic>
+
+            <basic name="lastUpdated">
+                <temporal>TIMESTAMP</temporal>
+            </basic>
+
+            <many-to-one name="left">
+                <join-table name="movement"/>
+            </many-to-one>
+
+            <many-to-one name="right">
+                <join-table name="movement"/>
+            </many-to-one>
+
+            <many-to-one name="comparator">
+                <join-table name="poopermacho"/>
+            </many-to-one>
+
+        </attributes>
+
+    </entity>
+
+</entity-mappings>
