@@ -9,6 +9,8 @@
 
     <context:annotation-config/>
 
+    <import resource="spring-persist.xml"/>
+
     <context:component-scan base-package="nz.co.aetheric.poopermacho"/>
 
 </beans>
