@@ -23,6 +23,7 @@
         <module>base</module>
         <module>persist</module>
         <module>web</module>
+        <module>client</module>
     </modules>
     
 </project>
