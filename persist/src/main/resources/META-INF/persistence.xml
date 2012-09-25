@@ -4,10 +4,10 @@
     <persistence-unit name="poopermachoPersist" transaction-type="RESOURCE_LOCAL">
         <provider>org.hibernate.ejb.HibernatePersistence</provider>
 
-        <mapping-file>entities/Comparison.xml</mapping-file>
-        <mapping-file>entities/Description.xml</mapping-file>
-        <mapping-file>entities/Movement.xml</mapping-file>
-        <mapping-file>entities/PooperMacho.xml</mapping-file>
+        <mapping-file>META-INF/entities/Comparison.xml</mapping-file>
+        <mapping-file>META-INF/entities/Description.xml</mapping-file>
+        <mapping-file>META-INF/entities/Movement.xml</mapping-file>
+        <mapping-file>META-INF/entities/PooperMacho.xml</mapping-file>
 
         <exclude-unlisted-classes>true</exclude-unlisted-classes>
         <validation-mode>NONE</validation-mode>
