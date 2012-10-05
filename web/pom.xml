@@ -138,8 +138,19 @@
 
     </dependencies>
 
+    <pluginRepositories>
+
+        <pluginRepository>
+            <id>repository.springframework.maven.milestone</id>
+            <name>Spring Framework Maven Milestone Repository</name>
+            <url>http://maven.springframework.org/milestone</url>
+        </pluginRepository>
+
+    </pluginRepositories>
+
     <build>
         <plugins>
+
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>tomcat-maven-plugin</artifactId>
@@ -148,7 +159,37 @@
                     <path>/</path>
                 </configuration>
             </plugin>
+
+            <!--https://github.com/cloudfoundry/vcap-java-client/tree/master/cloudfoundry-maven-plugin-->
+            <plugin>
+                <groupId>org.cloudfoundry</groupId>
+                <artifactId>cf-maven-plugin</artifactId>
+                <version>1.0.0.M1</version>
+                <configuration>
+                    <server>${foundry.server}</server>
+                    <target>${foundry.target}</target>
+                    <memory>256</memory>
+                </configuration>
+            </plugin>
+
         </plugins>
     </build>
+
+    <profiles>
+        <profile>
+            <id>dev</id>
+            <properties>
+                <foundry.server>cloud-foundry-local</foundry.server>
+                <foundry.target>http://localhost</foundry.target>
+            </properties>
+        </profile>
+        <profile>
+            <id>prod</id>
+            <properties>
+                <foundry.server>cloud-foundry-cloud</foundry.server>
+                <foundry.target>http://api.cloudfoundry.com</foundry.target>
+            </properties>
+        </profile>
+    </profiles>
 
 </project>
